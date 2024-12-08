@@ -1,17 +1,7 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Page Not Found</title>
-</head>
-<body>
-    <script>
+<script>
+    if (window.location.pathname !== '/.well-known/discord') {
         if (window.location.pathname === '/.well-known/discord') {
-            // Redirect
             window.location.href = '/r1ck/.well-known/discord';
         }
-    </script>
-    <h1>404 - Page Not Found</h1>
-</body>
-</html>
+    }
+</script>
