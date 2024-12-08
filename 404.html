@@ -1,7 +1,6 @@
 <script>
-    if (window.location.pathname !== '/.well-known/discord') {
-        if (window.location.pathname === '/.well-known/discord') {
-            window.location.href = '/r1ck/.well-known/discord';
-        }
+    // Redirect / .well-known to the actual location of the file
+    if (window.location.pathname === '/.well-known/discord') {
+        window.location.href = '/assets/.well-known/discord';
     }
 </script>
