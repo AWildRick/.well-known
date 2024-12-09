@@ -1,0 +1,162 @@
+/* General Styles */
+body, html {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    font-family: 'Montserrat', sans-serif;
+    overflow: hidden;
+    background: black;
+  }
+  
+  /* Welcome Screen */
+  #welcome-screen {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    position: relative;
+  }
+  
+  .greeting-box {
+    text-align: center;
+    padding: 20px;
+    background: rgba(50, 50, 50, 0.9);
+    border: 2px solid white;
+    box-shadow: 0 0 20px white;
+    animation: glow 1.5s infinite alternate;
+  }
+  
+  @keyframes glow {
+    from {
+      box-shadow: 0 0 10px white;
+    }
+    to {
+      box-shadow: 0 0 30px white;
+    }
+  }
+  
+  .greeting-text {
+    font-size: 24px;
+    color: white;
+    margin-bottom: 20px;
+  }
+  
+  .enter-button {
+    background: white;
+    color: black;
+    font-size: 18px;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    text-transform: uppercase;
+    box-shadow: 0 0 10px white;
+    transition: all 0.3s ease;
+  }
+  
+  .enter-button:hover {
+    background: lime;
+    color: white;
+    box-shadow: 0 0 20px lime;
+  }
+  
+  /* Main Content */
+  #main-content {
+    display: none;
+    height: 100%;
+    text-align: center;
+    color: black;
+    font-size: 48px;
+    background: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+  }
+  
+  .main-greeting {
+    animation: dramatic-entrance 2s ease forwards, flicker 2s infinite;
+    opacity: 0;
+  }
+  
+  @keyframes dramatic-entrance {
+    0% {
+      opacity: 0;
+      transform: scale(0.5) rotate(-20deg);
+    }
+    50% {
+      opacity: 0.7;
+      transform: scale(1.2) rotate(10deg);
+    }
+    100% {
+      opacity: 1;
+      transform: scale(1) rotate(0deg);
+    }
+  }
+  
+  @keyframes flicker {
+    0%,
+    100% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0.9;
+    }
+  }
+  
+  /* Swipe Transition */
+  .transition {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: white;
+    z-index: 100;
+    animation: swipe 1.5s cubic-bezier(0.65, 0, 0.35, 1) forwards;
+  }
+  
+  @keyframes swipe {
+    0% {
+      transform: scaleY(0);
+      opacity: 0.2;
+    }
+    50% {
+      transform: scaleY(1);
+      opacity: 1;
+    }
+    100% {
+      transform: scaleY(0);
+      opacity: 0;
+    }
+  }
+  
+  /* VHS Effect Overlay */
+  .vhs-filter {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    background: repeating-linear-gradient(
+      to bottom,
+      rgba(255, 255, 255, 0.1) 0%,
+      rgba(0, 0, 0, 0.1) 1%,
+      rgba(255, 255, 255, 0.1) 2%
+    );
+    mix-blend-mode: overlay;
+    animation: vhs 0.1s infinite;
+    opacity: 0.2;
+  }
+  
+  @keyframes vhs {
+    0% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-1px);
+    }
+    100% {
+      transform: translateY(0);
+    }
+  }
+  

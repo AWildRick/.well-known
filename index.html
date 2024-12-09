@@ -1,124 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>r1ck.exe</title>
-    
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
-
-    <style>
-        body {
-            background-color: #121212;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            margin: 0;
-            color: white;
-            font-family: 'Montserrat', sans-serif;
-            overflow: hidden;
-        }
-
-        .container {
-            background-color: #333;
-            padding: 40px;
-            border-radius: 20px;
-            border: 5px solid white;
-            text-align: center;
-            box-shadow: 0 0 15px rgba(255, 255, 255, 0.5);
-            animation: glow 1.5s ease-in-out infinite alternate;
-        }
-
-        h1 {
-            font-size: 3em;
-            margin: 0;
-            text-shadow: 0 0 10px rgba(255, 255, 255, 0.8), 0 0 20px rgba(255, 255, 255, 0.8);
-        }
-
-        p {
-            font-size: 1.5em;
-            text-shadow: 0 0 10px rgba(255, 255, 255, 0.8), 0 0 15px rgba(255, 255, 255, 0.8);
-        }
-
-        @keyframes glow {
-            0% {
-                box-shadow: 0 0 15px rgba(255, 255, 255, 0.5), 0 0 30px rgba(255, 255, 255, 0.7);
-            }
-            100% {
-                box-shadow: 0 0 30px rgba(255, 255, 255, 0.8), 0 0 60px rgba(255, 255, 255, 1);
-            }
-        }
-
-        #background-music {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: -1;
-            opacity: 0;
-            animation: fadeIn 3s forwards;
-        }
-
-        @keyframes fadeIn {
-            0% {
-                opacity: 0;
-            }
-            100% {
-                opacity: 1;
-            }
-        }
-
-        #mute-button {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            background-color: #333;
-            color: white;
-            border: 2px solid white;
-            padding: 10px 20px;
-            border-radius: 30px;
-            cursor: pointer;
-            font-size: 1em;
-            box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
-            transition: all 0.3s;
-        }
-
-        #mute-button:hover {
-            background-color: #444;
-            box-shadow: 0 0 20px rgba(255, 255, 255, 0.7);
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dramatic Entrance</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-
-    <audio id="background-music" autoplay loop>
-        <source src="https://raw.githubusercontent.com/awildrick/r1ck/main/music/main.mp3" type="audio/mp3">
-        your browser does not support the audio element.
-    </audio>
-
-    <div class="container">
-        <h1>hi, i'm r1ck.exe!</h1>
-        <p>currently creating this website!</p>
+  <div id="welcome-screen">
+    <div class="greeting-box">
+      <p class="greeting-text">Will you enter?</p>
+      <button class="enter-button">Yes.</button>
     </div>
-
-    <button id="mute-button">Mute</button>
-
-    <script>
-        const music = document.getElementById('background-music');
-        const muteButton = document.getElementById('mute-button');
-
-        muteButton.addEventListener('click', () => {
-            if (music.muted) {
-                music.muted = false;
-                muteButton.textContent = 'Mute';
-            } else {
-                music.muted = true;
-                muteButton.textContent = 'Unmute';
-            }
-        });
-    </script>
-
+  </div>
+  <div id="main-content">
+    <p class="main-greeting">hi, i'm rick! this website is a wip.</p>
+  </div>
+  <script src="script.js"></script>
 </body>
 </html>
